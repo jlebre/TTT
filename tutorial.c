@@ -2,8 +2,9 @@
 
 void tutorial(void)
 {
-    int a;
+    int b;
 
+    system("clear");
 	printf("\n\n\tWELCOME TO THE TUTORIAL\n\n");
     //basic rules
 	printf("\t     |     |     \n");
@@ -16,23 +17,23 @@ void tutorial(void)
 	printf("\t  7  |  8  |  9  \n");
 	printf("\t     |     |     \n");
 	printf("\n\n\n");
-    printf("What do you want to do?");
-    printf("1 - RETURN TO MENU\n");
-    printf("2 - PLAY\n");
-    printf("3 - EXIT\n");
-    while (a != 1 || a != 2 || a != 3)
+    printf("\tWhat do you want to do?\n\n");
+    printf("\t1 - RETURN TO MENU\n");
+    printf("\t2 - PLAY\n");
+    printf("\t3 - EXIT\n\n");
+    scanf("%d", &b);
+    while (b != '1' && b != '2' && b != '2')
     {
-        a = scanf(a);
-        if (a == 1)
+        b = getchar();
+        while (getchar() != '\n')
+            getchar();
+        if (b == '1')
             menu();
-        else if (a == 2)
-            play();
-        else if (a == 3)
-            return (0);
+        else if (b == '2')
+            mode();
+        else if (b == '3')
+            exit (EXIT_FAILURE);
         else
-            printf("Invalid Option! What do you want to do?");
-            printf("1 - RETURN TO MENU\n");
-            printf("2 - PLAY\n");
-            printf("3 - EXIT\n");
+            printf("Invalid Option, Try Again!\n\n");
     }
 }

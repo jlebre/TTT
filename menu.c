@@ -1,24 +1,49 @@
 #include "ttt.h"
 
-int menu(void)
+void mode(void)
 {
-    int a;
+    char a;
 
-    printf("\tMENU\n\n");
-    printf("(choose one option)");
-    printf("1 - TUTORIAL\n");
-    printf("2 - PLAY\n");
-    printf("3 - EXIT\n");
-    while (a != 1 || a != 2 || a != 3)
+    system("clear");
+    printf("\t(choose one option)\n\n");
+    printf("\t1 - MULTIPLAYERS\n\n");
+    printf("\t2 - VS. PC\n\n");
+    while (a != '1' && a != '2')
     {
-        a = scanf(a);
-        if (a == 1)
-            tutorial();
-        else if (a == 2)
-            play();
-        else if (a == 3)
-            return (0);
+        a = getchar();
+        while (getchar() != '\n')
+            getchar();
+        if (a == '1')
+            play1();
+        else if (a == '2')
+            play2();
         else
-            printf("Invalid Option, Try Again!");
+            printf("Invalid Option, Try Again!\n\n");
+    }
+}
+
+void menu(void)
+{
+    char a;
+
+    system("clear");
+    ft_whiteb("\t\tMENU\n\n");
+    printf("\t(choose one option)\n\n");
+    ft_yellow("\t1 - TUTORIAL\n\n");
+    ft_green("\t2 - PLAY\n\n");
+    ft_red("\t3 - EXIT\n\n");
+    while (a != '1' && a != '2' && a != '3')
+    {
+        a = getchar();
+        while (getchar() != '\n')
+            getchar();
+        if (a == '1')
+            tutorial();
+        else if (a == '2')
+            mode();
+        else if (a == '3')
+            exit (EXIT_FAILURE);
+        else
+            printf("Invalid Option, Try Again!\n\n");
     }
 }

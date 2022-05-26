@@ -1,44 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "ttt.h"
 
-void print_map(void)
+//printf("\t    %c  |  %c  |  %c  \n", );
+
+void	print_map(void)
 {
-	printf("\n\n\t   TIC TAC TOE\n\n");
-	printf("\t     |     |     \n");
-	printf("\t     |     |     \n");
-	printf("\t_____|_____|_____\n");
-	printf("\t     |     |     \n");
-	printf("\t     |     |     \n");
-	printf("\t_____|_____|_____\n");
-	printf("\t     |     |     \n");
-	printf("\t     |     |     \n");
-	printf("\t     |     |     \n");
+	char matrix[3][3] = {
+		{'\s', '\s', '\s'},
+		{'\s', '\s', '\s'},
+		{'\s', '\s', '\s'},
+	};
+
+	printf("\n\n");
+	printf("\t       |     |     \n");
+	printf("\t    %c  |  %c  |  %c  \n", matrix[0][0], matrix[0][1], matrix[0][2]);
+	printf("\t  _____|_____|_____\n");
+	printf("\t       |     |     \n");
+	printf("\t    %c  |  %c  |  %c  \n", matrix[1][0], matrix[1][1], matrix[1][2]);
+	printf("\t  _____|_____|_____\n");
+	printf("\t       |     |     \n");
+	printf("\t    %c  |  %c  |  %c  \n", matrix[2][0], matrix[2][1], matrix[2][2]);
+	printf("\t       |     |     \n");
 	printf("\n\n\n");
-}
-/*
-int	win(void)
-{
-	if ((A1 && A2 && A3) || (B1 && B2 && B3) || (C1 && C2 && C3)
-			|| (A1 && B1 && C1) || (A2 && B2 && C2) || (A3 && B3 && C3)
-			|| (A1 && B2 && C3) || (A3 && B2 && C1))
-	{
+
+	if ((matrix[0][0] == matrix[0][1] && matrix[0][1] == matrix[0][2])
+		|| (matrix[1][0] == matrix[1][1] && matrix[1][1] == matrix[1][2])
+		|| (matrix[2][0] == matrix[2][1] && matrix[2][1] == matrix[2][2])
+		|| (matrix[0][0] == matrix[1][0] && matrix[1][0] == matrix[2][0])
+		|| (matrix[0][1] == matrix[1][1] && matrix[1][1] == matrix[2][1])
+		|| (matrix[0][2] == matrix[1][2] && matrix[1][2] == matrix[2][2])
+		|| (matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2])
+		|| (matrix[2][0] == matrix[1][1] && matrix[1][1] == matrix[0][2]))
 		printf("You Win!");
-		return (1);
-	}	
-	return (0);
-}
-
-/*
-	 123
-	A
-	B
-	C
-
-*/
-
-int main(void)
-{
-	print_map();
-	//while (!win())
-	return (0);
 }
