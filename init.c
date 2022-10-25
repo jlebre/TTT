@@ -15,6 +15,10 @@ void    init(void)
 	printf("\t       |     |     \n");
 	printf("\n\n\n");
     printf("Press ENTER to Continue!\n");
-    getchar();
+    while (1)
+	{
+		if (getchar() == '\n')
+			break ;
+	}
     menu();
 }

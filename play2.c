@@ -5,9 +5,11 @@ void    play2(void)
     int player1;
     int player2;
 
-    system("clear");
-    printf("Player 1 is X!\n");
-    printf("Player 2 is O!\n");
+    player1 = 1;
+	player2 = 2;
+	system("clear");
+	printf("Player %i is X!\n", player1);
+	printf("Player %i is O!\n", player2);
     //if input valid counter++
 }
 
